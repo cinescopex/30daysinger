@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import MainLayout from "../../components/MainLayout/MainLayout";
 import { useParams } from "react-router-dom";
 import data from "../../components/VideoPlayer/data.json";
 import BitmovinVideoPlayer from "../../components/VideoPlayer/BitmovinVideoPlayer";
 
 const Course = () => {
-  const findCourseByLevelAndCourse = (data, level, course) => {
+  const { level, course } = useParams();
+
+  const findCourseByLevelAndCourse = useCallback((data, level, course) => {
     return data.content.find(
       (c) =>
         c.courseId.toLowerCase() === course.toLowerCase() &&
         c.levelId.toLowerCase() === level.toLowerCase()
     );
-  };
-  const { level, course } = useParams();
-  const foundItem = findCourseByLevelAndCourse(data, level, course);
+  }, []);
+
+  const foundItem = useMemo(() => {
+    return findCourseByLevelAndCourse(data, level, course);
+  }, [findCourseByLevelAndCourse, level, course]);
+
   const [currentCourse, setCurrentCourse] = useState(foundItem);
-  const content = data.content;
 
   return (
     <MainLayout>
@@ -25,7 +29,7 @@ const Course = () => {
         <div className="theme-card-container">
           <div className="theme-card relative">
             <BitmovinVideoPlayer
-              content={content}
+              content={data.content}
               onVideoSelected={setCurrentCourse}
             />
             <div className="theme-sub-card">

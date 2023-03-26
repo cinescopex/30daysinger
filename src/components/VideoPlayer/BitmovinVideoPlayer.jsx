@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 import { Player } from "bitmovin-player/modules/bitmovinplayer-core";
 import EngineBitmovinModule from "bitmovin-player/modules/bitmovinplayer-engine-bitmovin";
 import MseRendererModule from "bitmovin-player/modules/bitmovinplayer-mserenderer";
@@ -25,20 +31,28 @@ function BitmovinPlayer({ content, onVideoSelected }) {
     key: "d5af6a6a-bdc9-4a9b-8cb8-7a84cd52a4a7",
   };
 
-  function handleSetCurrentIndex(index) {
-    if (index >= content.length) index = 0;
-    setCurrentIndex(index);
-    window.scrollTo(0, 0);
-  }
+  const handleSetCurrentIndex = useCallback(
+    (index) => {
+      if (index >= content.length) index = 0;
+      setCurrentIndex(index);
+      window.scrollTo(0, 0);
+    },
+    [content]
+  );
 
-  const handleVideoSelected = (video) => {
-    onVideoSelected(video);
-  };
+  const handleVideoSelected = useCallback(
+    (video) => {
+      onVideoSelected(video);
+    },
+    [onVideoSelected]
+  );
 
-  const playerSource = {
-    hls: videoUrl,
-    title: videoTitle,
-  };
+  const playerSource = useMemo(() => {
+    return {
+      hls: videoUrl,
+      title: videoTitle,
+    };
+  }, [videoUrl, videoTitle]);
   const playerDiv = useRef();
 
   useEffect(() => {
