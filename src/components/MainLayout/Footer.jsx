@@ -1,5 +1,6 @@
 import React from "react";
 import LogoH from "./LogoH";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,37 +22,37 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 flex flex-col md:space-y-0 md:flex-row md:gap-x-2 items-end md:items-start md:justify-end">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="hover:underline hover:text-sky-500 hover:cursor-pointer"
           >
             Home
-          </a>
-          <a
-            href="privacy"
+          </Link>
+          <Link
+            to="/privacy"
             className="hover:underline hover:text-sky-500 hover:cursor-pointer"
           >
             Privacy
-          </a>
-          <a
-            href="/reviews"
+          </Link>
+          <Link
+            to="/reviews"
             className="hover:underline hover:text-sky-500 hover:cursor-pointer"
           >
             Reviews
-          </a>
+          </Link>
 
-          <a
-            href="accessibility"
+          <Link
+            to="/accessibility"
             className="hover:underline hover:text-sky-500 hover:cursor-pointer"
           >
             Accessibility
-          </a>
-          <a
-            href="affiliate"
+          </Link>
+          <Link
+            to="/affiliate"
             className="hover:underline hover:text-sky-500 hover:cursor-pointer"
           >
             Affiliate Program
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

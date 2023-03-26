@@ -16,19 +16,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/level/beginner",
-    element: <Levels />,
-  },
-  {
-    path: "/level/advanced",
-    element: <Levels />,
-  },
-  {
-    path: "/level/tricks",
-    element: <Levels />,
-  },
-  {
-    path: "/level/daily",
+    path: "/level/:level",
     element: <Levels />,
   },
   {

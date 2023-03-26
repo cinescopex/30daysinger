@@ -25,7 +25,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         )}
       </div>
       {menuOpen && (
-        <Menu theme={theme} toggleTheme={toggleMenu} isMenuOpen={menuOpen} />
+        <Menu theme={theme} toggleTheme={toggleTheme} isMenuOpen={menuOpen} />
       )}
     </nav>
   );
