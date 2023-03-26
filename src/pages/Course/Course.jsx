@@ -4,20 +4,8 @@ import { useParams } from "react-router-dom";
 import data from "../../components/VideoPlayer/data.json";
 import BitmovinVideoPlayer from "../../components/VideoPlayer/BitmovinVideoPlayer";
 
-interface CourseInfo {
-  id: string;
-  videoTitle: string;
-  videoUrl: string;
-  description: string;
-  author: string;
-  level: string;
-  levelId: string;
-  course: string;
-  courseId: string;
-}
-
 const Course = () => {
-  const initialCourse: CourseInfo = {
+  const initialCourse = {
     id: "1",
     videoTitle: "Welcome",
     videoUrl:
@@ -52,7 +40,7 @@ const Course = () => {
                 <strong>From: </strong> {currentCourse.course}
               </span>
               <span>
-                <strong>By: </strong> {currentCourse.author}
+                <strong>by: </strong> {currentCourse.author}
               </span>
               <br />
               <div className="lesson-typograph">
