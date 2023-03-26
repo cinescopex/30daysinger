@@ -10,7 +10,7 @@ const Logo = () => {
   return (
     <div
       onClick={handleClick}
-      className="flex flex-col text-white dark:text-blue-400 -space-y-2.5 items-left cursor-default select-none hover:cursor-pointer"
+      className="flex flex-col -space-y-2.5 items-left cursor-default select-none hover:cursor-pointer"
     >
       <div className="flex flex-row items-center">
         <span className="font-bold text-3xl tracking-tight">3</span>

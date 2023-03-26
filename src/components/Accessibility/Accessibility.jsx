@@ -3,10 +3,12 @@ const Accessibility = () => {
   return (
     <MainLayout>
       <div className="py-8">
-        <h1 className="text-3xl font-bold text-center mb-6">ACCESSIBILITY</h1>
+        <h1 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-700">
+          Accessibility
+        </h1>
         <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-white shadow-md rounded-md p-6 mb-6">
-            <p className="my-6">
+          <div className="text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 shadow-md rounded-md p-6 mb-6">
+            <p className="mb-6">
               30 Day Lessons Inc. is committed to providing a website that is
               accessible to the widest possible audience, regardless of
               technology or ability. We are actively working to increase the
@@ -28,7 +30,7 @@ const Accessibility = () => {
               We're working hard to achieve our goal of Level A accessibility,
               but we realise there are some areas that still need improving.
             </p>
-            <p className="my-6">
+            <p className="mt-6">
               We will regularly review progress towards policy goals. Please
               report any issues or feedback to support@30daysinger.com.
             </p>

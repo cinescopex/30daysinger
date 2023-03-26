@@ -11,7 +11,7 @@ const Logo = () => {
   return (
     <div
       onClick={handleClick}
-      className="flex flex-row text-white dark:text-blue-400 items-left cursor-default select-none gap-x-1 hover:cursor-pointer"
+      className="flex flex-row items-left cursor-default select-none gap-x-1 hover:cursor-pointer"
     >
       <div className="flex flex-col items-start -space-y-2 m-1">
         <div className="flex flex-row items-center">
