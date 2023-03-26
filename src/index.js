@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "./ThemeContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Home from "./components/Home/Home";
-import Levels from "./components/Levels/Levels";
-import Affiliate from "./components/Affiliate/Affiliate";
-import Privacy from "./components/Privacy/Privacy";
-import Reviews from "./components/Reviews/Reviews";
-import Accessibility from "./components/Accessibility/Accessibility";
+import Home from "./pages/Home/Home";
+import Levels from "./pages/Levels/Levels";
+import Affiliate from "./pages/Affiliate/Affiliate";
+import Privacy from "./pages/Privacy/Privacy";
+import Accessibility from "./pages/Accessibility/Accessibility";
+import Reviews from "./pages/Reviews/Reviews";
 
 const router = createBrowserRouter([
   {

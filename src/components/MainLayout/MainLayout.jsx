@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer";
 import ThemeContext from "../../ThemeContext";
 
 function MainLayout({ children }) {
@@ -8,10 +8,12 @@ function MainLayout({ children }) {
 
   return (
     <div
-      className={`${theme} flex flex-col min-h-screen text-slate-200 dark:bg-slate-900`}
+      className={`${theme} flex flex-col min-h-screen text-slate-200 bg-slate-50 dark:bg-slate-900 `}
     >
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <main className="bg-gray-200 flex-grow">{children}</main>
+      <main className="flex-grow bg-gray-200 dark:bg-slate-900 ">
+        {children}
+      </main>
       <Footer />
     </div>
   );

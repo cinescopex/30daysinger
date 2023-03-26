@@ -1,5 +1,6 @@
-import MainLayout from "../MainLayout/MainLayout";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import MainLayout from "../../components/MainLayout/MainLayout";
+
 const Reviews = () => {
   const reviews = [
     {
@@ -14,6 +15,7 @@ const Reviews = () => {
       review:
         "The course is great, straight to the point, and very easy to follow course. At first, I had my doubts about it, but the the second week, and after doing all the vocals exercises on a daily basis as instructed, I started to feel a difference. My voice is very clear now, and I can easily hit high notes I wasn't able to do so before. And most importantly, I'm confidently now a lead vocal in my band, thanks to 30DaySinger.com!",
     },
+
     {
       name: "Don Gilkinson",
       rating: 2.9,

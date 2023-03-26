@@ -1,4 +1,4 @@
-import MainLayout from "../MainLayout/MainLayout";
+import MainLayout from "../../components/MainLayout/MainLayout";
 import { useParams } from "react-router-dom";
 
 const Levels = () => {
