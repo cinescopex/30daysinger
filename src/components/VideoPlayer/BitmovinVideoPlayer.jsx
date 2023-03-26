@@ -17,7 +17,7 @@ import "bitmovin-player/bitmovinplayer-ui.css";
 
 function BitmovinPlayer({ content, onVideoSelected }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { videoUrl, videoTitle, description } = content[currentIndex];
+  const { videoUrl, videoTitle } = content[currentIndex];
 
   const [player, setPlayer] = useState(null);
 
@@ -35,7 +35,6 @@ function BitmovinPlayer({ content, onVideoSelected }) {
     onVideoSelected(video);
   };
 
-  console.log(videoUrl);
   const playerSource = {
     hls: videoUrl,
     title: videoTitle,
