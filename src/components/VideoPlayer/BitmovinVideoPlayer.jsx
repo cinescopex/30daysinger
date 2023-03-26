@@ -99,7 +99,7 @@ function BitmovinPlayer({ content, onVideoSelected }) {
 
   useEffect(() => {
     if (playerSource !== null) player?.load(playerSource);
-  }, [currentIndex]);
+  }, [currentIndex, playerSource, player]);
 
   return (
     <>
