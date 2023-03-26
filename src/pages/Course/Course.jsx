@@ -29,7 +29,7 @@ const Course = () => {
         <div className="theme-card-container">
           <div className="theme-card relative">
             <BitmovinVideoPlayer
-              content={data.content}
+              video={foundItem}
               onVideoSelected={setCurrentCourse}
             />
             <div className="theme-sub-card">

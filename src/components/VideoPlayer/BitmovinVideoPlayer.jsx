@@ -21,31 +21,14 @@ import StyleModule from "bitmovin-player/modules/bitmovinplayer-style";
 import { UIFactory } from "bitmovin-player/bitmovinplayer-ui";
 import "bitmovin-player/bitmovinplayer-ui.css";
 
-function BitmovinPlayer({ content, onVideoSelected }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { videoUrl, videoTitle } = content[currentIndex];
+function BitmovinPlayer({ video }) {
+  const { videoUrl, videoTitle } = video;
 
   const [player, setPlayer] = useState(null);
 
   const playerConfig = {
     key: "d5af6a6a-bdc9-4a9b-8cb8-7a84cd52a4a7",
   };
-
-  const handleSetCurrentIndex = useCallback(
-    (index) => {
-      if (index >= content.length) index = 0;
-      setCurrentIndex(index);
-      window.scrollTo(0, 0);
-    },
-    [content]
-  );
-
-  const handleVideoSelected = useCallback(
-    (video) => {
-      onVideoSelected(video);
-    },
-    [onVideoSelected]
-  );
 
   const playerSource = useMemo(() => {
     return {
@@ -99,7 +82,7 @@ function BitmovinPlayer({ content, onVideoSelected }) {
 
   useEffect(() => {
     if (playerSource !== null) player?.load(playerSource);
-  }, [currentIndex, playerSource, player]);
+  }, [playerSource, player]);
 
   return (
     <>
