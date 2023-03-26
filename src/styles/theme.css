@@ -1,0 +1,51 @@
+/* styles.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.theme-content {
+}
+
+.theme-title {
+  @apply text-3xl font-bold text-center my-6 text-slate-800 dark:text-slate-200;
+}
+
+.theme-card-container {
+  @apply px-4;
+}
+
+.theme-card {
+  @apply text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 shadow-md rounded-md p-6 mb-6 max-w-4xl mx-auto;
+}
+
+.theme-sub-card {
+  @apply my-4 text-gray-700 dark:text-slate-300 bg-gray-200 dark:bg-slate-700 shadow-md rounded-md p-6 mb-6 max-w-4xl mx-auto;
+}
+.theme-sub-card span {
+  @apply block;
+}
+.theme-sub-card .lesson-typograph h2 {
+  @apply my-2 font-bold;
+}
+.theme-sub-card .lesson-typograph p {
+  @apply my-2 font-normal;
+}
+.theme-card p {
+  @apply my-6;
+}
+
+.beginner-border-color {
+  @apply border-slate-400;
+}
+
+.advanced-border-color {
+  @apply border-slate-400;
+}
+
+.tricks-border-color {
+  @apply border-slate-400;
+}
+
+.daily-border-color {
+  @apply border-slate-400;
+}

@@ -2,12 +2,10 @@ import MainLayout from "../../components/MainLayout/MainLayout";
 const Privacy = () => {
   return (
     <MainLayout>
-      <div className="py-8">
-        <h1 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-700">
-          Privacy Policy
-        </h1>
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 dark:highlight-white/5 shadow-lg rounded-lg p-6 mb-6">
+      <div className="theme-content">
+        <h1 className="theme-title">Privacy Policy</h1>
+        <div className="theme-card-container">
+          <div className="theme-card">
             <h2 className="text-left">EFFECTIVE DATE: August 18, 2022</h2>
             <h3 className="font-bold my-6">1. INTRODUCTION.</h3>
             <p>

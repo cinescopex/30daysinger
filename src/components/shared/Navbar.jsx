@@ -9,7 +9,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="relative text-sky-900 dark:text-white dark:bg-gray-800 flex justify-between items-center flex-wrap p-4">
+    <nav className="relative shadow-lg text-sky-900 dark:text-white dark:bg-gray-800 flex justify-between items-center flex-wrap p-4">
       <Logo />
       <div className="flex flex-col items-center">
         <span className="font-normal text-xl tracking-tighter">

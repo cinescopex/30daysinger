@@ -13,7 +13,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="text-sky-900 dark:text-white dark:bg-gray-800 p-4">
+    <footer className="text-sky-900 shadow-lg dark:text-white dark:bg-gray-800 p-4">
       <div className="flex">
         <div className="w-full md:w-1/2 text-left md:text-left">
           <LogoH />

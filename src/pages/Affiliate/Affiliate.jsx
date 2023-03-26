@@ -2,12 +2,10 @@ import MainLayout from "../../components/MainLayout/MainLayout";
 const Affiliate = () => {
   return (
     <MainLayout>
-      <div className="py-8">
-        <h1 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-700">
-          Affiliate Program
-        </h1>
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 shadow-md rounded-md p-6 mb-6">
+      <div className="theme-container">
+        <h1 className="theme-title">Affiliate Program</h1>
+        <div className="theme-card-container">
+          <div className="theme-card">
             <h1 class="text-2xl font-semibold mb-4">
               The Best Online Singing Lessons!
             </h1>

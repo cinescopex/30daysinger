@@ -26,16 +26,11 @@ const Reviews = () => {
 
   return (
     <MainLayout>
-      <div className="py-8">
-        <h1 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-700">
-          Student Reviews
-        </h1>
-        <div className="max-w-4xl mx-auto px-4">
+      <div className="theme-content">
+        <h1 className="theme-title">Student Reviews</h1>
+        <div className="theme-card-container">
           {reviews.map((review, index) => (
-            <div
-              key={index}
-              className="text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 shadow-md rounded-md p-6 mb-6"
-            >
+            <div key={index} className="theme-card">
               <h2 className="text-xl font-semibold mb-2">{review.name}</h2>
               <div className="flex items-center mb-4">
                 <div className="text-yellow-400 flex gap-1">

@@ -9,6 +9,7 @@ import Affiliate from "./pages/Affiliate/Affiliate";
 import Privacy from "./pages/Privacy/Privacy";
 import Accessibility from "./pages/Accessibility/Accessibility";
 import Reviews from "./pages/Reviews/Reviews";
+import Course from "./pages/Course/Course";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,12 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/level/:level",
+    path: "/learn/:level",
     element: <Levels />,
+  },
+  {
+    path: "/learn/:level/:course",
+    element: <Course />,
   },
   {
     path: "/reviews",
