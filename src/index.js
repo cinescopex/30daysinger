@@ -1,17 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ThemeProvider } from "./ThemeContext";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import Home from "./components/Home/Home";
+import Levels from "./components/Levels/Levels";
+import Affiliate from "./components/Affiliate/Affiliate";
+import Privacy from "./components/Privacy/Privacy";
+import Reviews from "./components/Reviews/Reviews";
+import Accessibility from "./components/Accessibility/Accessibility";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/level/beginner",
+    element: <Levels />,
+  },
+  {
+    path: "/level/advanced",
+    element: <Levels />,
+  },
+  {
+    path: "/level/tricks",
+    element: <Levels />,
+  },
+  {
+    path: "/level/daily",
+    element: <Levels />,
+  },
+  {
+    path: "/reviews",
+    element: <Reviews />,
+  },
+  {
+    path: "/privacy",
+    element: <Privacy />,
+  },
+  {
+    path: "/accessibility",
+    element: <Accessibility />,
+  },
+  {
+    path: "/affiliate",
+    element: <Affiliate />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
