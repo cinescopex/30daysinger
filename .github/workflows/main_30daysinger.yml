@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_b8f88cb9b8294a1293811e2225f1fa6b }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_4cb77d9225b841289cbe25b8e955a236 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_049fbbd3c78045e8a60d4c446e2c4bcb }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_9380be344a1144b6ab49e1de079ca4ee }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b8f88cb9b8294a1293811e2225f1fa6b }}/nginx:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_049fbbd3c78045e8a60d4c446e2c4bcb }}/cinescopex/30daysinger:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: '30daysinger'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_187111eb7d77469a86f005c2167d2f45 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b8f88cb9b8294a1293811e2225f1fa6b }}/nginx:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_4123351536f247bd8b143ed08e4e6142 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_049fbbd3c78045e8a60d4c446e2c4bcb }}/cinescopex/30daysinger:${{ github.sha }}'
