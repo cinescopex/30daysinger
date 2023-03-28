@@ -67,6 +67,13 @@ const Footer = () => {
           >
             Affiliate Program
           </Link>
+          <Link
+            to="/technology-stack"
+            className="hover:underline hover:text-sky-500 hover:cursor-pointer"
+            onClick={handleClick}
+          >
+            Technology Stack
+          </Link>
         </div>
       </div>
     </footer>

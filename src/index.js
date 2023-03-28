@@ -10,6 +10,7 @@ import Privacy from "./pages/Privacy/Privacy";
 import Accessibility from "./pages/Accessibility/Accessibility";
 import Reviews from "./pages/Reviews/Reviews";
 import Course from "./pages/Course/Course";
+import Technology from "./pages/Technology/Technology";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/affiliate",
     element: <Affiliate />,
+  },
+  {
+    path: "/technology-stack",
+    element: <Technology />,
   },
 ]);
 

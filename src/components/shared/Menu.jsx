@@ -6,6 +6,7 @@ import {
   MdAccessibility,
 } from "react-icons/md";
 import { TbAffiliateFilled } from "react-icons/tb";
+import { GrStackOverflow } from "react-icons/gr";
 import ThemeToggleButton from "./ThemeToggleButton";
 import { Link } from "react-router-dom";
 
@@ -50,6 +51,14 @@ const Menu = ({ theme, toggleTheme, isMenuOpen }) => (
       >
         <TbAffiliateFilled />
         <span>Affiliate Program</span>
+      </Link>
+      <hr className="border-t border-gray-300 dark:border-gray-600" />
+      <Link
+        to="/technology-stack"
+        className="flex items-center space-x-2 hover:underline hover:text-sky-500 hover:cursor-pointer"
+      >
+        <GrStackOverflow />
+        <span>Technology Stack</span>
       </Link>
       <hr className="border-t border-gray-300 dark:border-gray-600" />
 
