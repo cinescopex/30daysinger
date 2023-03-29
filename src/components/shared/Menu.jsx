@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Menu = ({ theme, toggleTheme, isMenuOpen }) => (
   <div
-    className={`absolute shadow-2xl top-full right-0 w-1/2 bg-gray-100 dark:bg-gray-800 text-sky-900 dark:text-white z-10 p-4 rounded-b-xl transition duration-300 ease-in-out transform o${
+    className={`w-fit absolute shadow-2xl top-full right-0 bg-gray-100 dark:bg-gray-800 text-sky-900 dark:text-white z-10 p-4 rounded-b-xl transition duration-300 ease-in-out transform o${
       isMenuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
     }}`}
   >

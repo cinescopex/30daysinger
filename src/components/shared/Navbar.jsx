@@ -9,28 +9,30 @@ const Navbar = ({ theme, toggleTheme }) => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="relative shadow-lg text-sky-900 dark:text-white dark:bg-gray-800 flex justify-between items-center flex-wrap p-4">
-      <Logo />
-      <div className="flex flex-col items-center">
-        <span
-          test-id="welcome-message"
-          className="font-normal text-xl tracking-tighter"
-        >
-          Welcome back
-        </span>
-        <span className="font-normal text-lg tracking-tighter">marcelo</span>
-      </div>
-      <div className="block cursor-pointer lg:hidden" onClick={toggleMenu}>
-        {menuOpen ? (
-          <AiOutlineClose className="flex items-center h-8 w-8" />
-        ) : (
-          <AiOutlineMenu className="flex items-center h-8 w-8" />
+    <div className="dark:bg-gray-800 shadow-lg">
+      <nav className="container max-w-4xl mx-auto relative text-sky-900 dark:text-white dark:bg-gray-800 flex justify-between items-center flex-wrap p-4">
+        <Logo />
+        <div className="flex flex-col items-center flex-grow">
+          <span
+            test-id="welcome-message"
+            className="font-normal text-xl tracking-tighter"
+          >
+            Welcome back
+          </span>
+          <span className="font-normal text-lg tracking-tighter">marcelo</span>
+        </div>
+        <div className="block cursor-pointer" onClick={toggleMenu}>
+          {menuOpen ? (
+            <AiOutlineClose className="flex items-center h-8 w-8" />
+          ) : (
+            <AiOutlineMenu className="flex items-center h-8 w-8" />
+          )}
+        </div>
+        {menuOpen && (
+          <Menu theme={theme} toggleTheme={toggleTheme} isMenuOpen={menuOpen} />
         )}
-      </div>
-      {menuOpen && (
-        <Menu theme={theme} toggleTheme={toggleTheme} isMenuOpen={menuOpen} />
-      )}
-    </nav>
+      </nav>
+    </div>
   );
 };
 
