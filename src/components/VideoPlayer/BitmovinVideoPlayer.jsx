@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Player } from "bitmovin-player/modules/bitmovinplayer-core";
 import EngineBitmovinModule from "bitmovin-player/modules/bitmovinplayer-engine-bitmovin";
 import MseRendererModule from "bitmovin-player/modules/bitmovinplayer-mserenderer";
@@ -15,9 +15,8 @@ import StyleModule from "bitmovin-player/modules/bitmovinplayer-style";
 import { UIFactory } from "bitmovin-player/bitmovinplayer-ui";
 import "bitmovin-player/bitmovinplayer-ui.css";
 
-function BitmovinPlayer({ content, onVideoSelected }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { videoUrl, videoTitle, description } = content[currentIndex];
+function BitmovinPlayer({ video }) {
+  const { videoUrl, videoTitle } = video;
 
   const [player, setPlayer] = useState(null);
 
@@ -25,21 +24,12 @@ function BitmovinPlayer({ content, onVideoSelected }) {
     key: "d5af6a6a-bdc9-4a9b-8cb8-7a84cd52a4a7",
   };
 
-  function handleSetCurrentIndex(index) {
-    if (index >= content.length) index = 0;
-    setCurrentIndex(index);
-    window.scrollTo(0, 0);
-  }
-
-  const handleVideoSelected = (video) => {
-    onVideoSelected(video);
-  };
-
-  console.log(videoUrl);
-  const playerSource = {
-    hls: videoUrl,
-    title: videoTitle,
-  };
+  const playerSource = useMemo(() => {
+    return {
+      hls: videoUrl,
+      title: videoTitle,
+    };
+  }, [videoUrl, videoTitle]);
   const playerDiv = useRef();
 
   useEffect(() => {
@@ -82,11 +72,12 @@ function BitmovinPlayer({ content, onVideoSelected }) {
 
       destroyPlayer();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (playerSource !== null) player?.load(playerSource);
-  }, [currentIndex]);
+  }, [playerSource, player]);
 
   return (
     <>
